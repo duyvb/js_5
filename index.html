@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <!-- BÀI 1 : QUẢN LÝ TUYỂN SINH -->
+    <div class="container">
+        <div class="form-gruop">
+            <h1 class="text-center mb-5">Bài 1 :Quản Lý Tuyển Sinh</h1>
+        </div>
+        <div class="row m-5">
+            <div class="item_1 col-4 mb-5 ">
+                <input type="number" id="soDiem0" class="form-control" placeholder="Điểm Chuẩn">
+            </div>
+            <div class="item_1 col-4">
+                <select id="khuvuc" class="form-control">
+                    <option value="Chọn Khu Vực">Chọn Khu Vực</option>
+                    <option value="2">A</option>
+                    <option value="1">B</option>
+                    <option value="0.5">C</option>
+                </select>
+            </div>
+            <div class="item_1 col-4">
+                <select id="doituong" class="form-control">
+                    <option value="Chọn đối tượng">Chọn đối tượng</option>
+                    <option value="2.5">1</option>
+                    <option value="1.5">2</option>
+                    <option value="1">3</option>
+                </select>
+            </div>
+            <div class="item_1 col-4">
+                <input type="number" id="soDiem1" class="form-control" placeholder="Điểm môn thứ 1">
+            </div>
+            <div class="item_1 col-4">
+                <input type="number" id="soDiem2" class="form-control" placeholder="Điểm môn thứ 2">
+            </div>
+            <div class="item_1 col-4">
+                <input type="number" id="soDiem3" class="form-control" placeholder="Điểm môn thứ 3">
+            </div>
+
+        </div>
+        <Button onclick="tinhDiem()" id="btnTinhDiem" class="btn btn-success">Tính Điểm</Button>
+        <div class="mt-5 alert alert-success w-25">
+            <p> Kết quả : <span id="tongdiem"></span></p>
+        </div>
+
+    </div>
+
+
+
+
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <br>
+
+
+
+    <!-- BÀI 2 : TÍNH TIỀN ĐIỆN -->
+
+
+    <div class="container">
+        <div class="form-gruop">
+            <h1 class="text-center mb-5">Bài 2 :Tính Tiền Điện</h1>
+        </div>
+        <div class="row m-5">
+            <div class="item_1 col-3  ">
+                <input type="text" id="khachhang" class="form-control w-100" placeholder="Nhập Họ Tên">
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="number" id="input-kw" class="form-control w-100" placeholder="Nhập số kw">
+            </div>
+        </div>
+        <Button onclick="tinhSoDien()" id="btntiendien" class="btn btn-success">Tính Tiền Điện</Button>
+        <div class="mt-5 alert alert-success w-50">
+            <p> Kết quả : <span id="tongSoDien"></span></p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <br>
+
+
+
+
+    <!-- BÀI 3 : TÍNH TIỀN THUẾ -->
+
+
+    <div class="container">
+        <div class="form-gruop">
+            <h1 class="text-center mb-5">Bài 3 :Tính Tiền Thuế</h1>
+        </div>
+        <div class="row m-5">
+            <div class="item_1 col-3  ">
+                <input type="text" id="hoten" class="form-control w-100" placeholder="Nhập Họ Tên">
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="number" id="thuNhap" class="form-control w-100" placeholder="Tổng thu nhập năm">
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="number" id="phuThuoc" class="form-control w-100" placeholder="Số người phụ thuộc">
+            </div>
+        </div>
+        <Button onclick="tinhTienThue()" id="btntienthue" class="btn btn-success">Tính Tiền Thuế</Button>
+        <div class="mt-5 alert alert-success w-50">
+            <p> Kết quả : <span id="tongTienThue"></span></p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+    <!-- BÀI 4 : TÍNH TIỀN CÁP -->
+
+
+    <div class="container">
+        <div class="form-gruop">
+            <h1 class="text-center mb-5">Bài 4 :Tính Tiền CÁP</h1>
+        </div>
+        <div class="row m-5">
+            <div class="item_1 col-3  ">
+                <select id="mySelect" onchange="myFunction()" class="form-control">
+                    <option value="">Chọn loại khách hàng</option>
+                    <option value="nhaDan">Nhà Dân</option>
+                    <option value="doanhNghiep">Doanh Nghiệp</option>
+                </select>
+                
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="text" id="makhach" class="form-control w-100" placeholder="Nhập mã khách hàng ">
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="number" id="caoCap" class="form-control w-100" placeholder="Số kênh cao cấp">
+            </div>
+            <div class="item_1 col-3  ">
+                <input type="number" id="soketnoi" class="form-control w-100" style="display:none;" placeholder="Số kết nối">
+            </div>
+        </div>
+        <Button onclick="tinhTienCap()" id="btntiencap" class="btn btn-success">Tính Tiền Cáp</Button>
+        <div class="mt-5 alert alert-success w-50">
+            <p> Kết quả : <span id="tongTienCap"></span></p>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/index.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
